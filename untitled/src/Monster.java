@@ -1,5 +1,8 @@
 abstract class Monster extends Character{
-    Monster(String name, int hp, int maxHp, int damage) {
-        super(name, hp, maxHp, damage);
+    private int xpReward, goldReward;
+    Monster(String name, int hp, int maxHp, Weapon weapon, int xpReward, int goldReward) {
+        super(name, hp, maxHp, weapon);
+        this.xpReward = xpReward;
+        this.goldReward = goldReward;
     }
 }

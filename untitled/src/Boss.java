@@ -1,6 +1,6 @@
 class Boss extends Monster{
-    Boss(String name, int hp, int maxHp, int damage) {
-        super(name, hp, maxHp, damage);
+    Boss(String name, int hp, int maxHp, Weapon weapon) {
+        super(name, hp, maxHp, weapon);
     }
 
     @Override
@@ -13,7 +13,7 @@ class Boss extends Monster{
     }
 
     @Override
-    void attack() {
+    void attack(String name, int damage, int health) {
 
     }
 

@@ -3,8 +3,8 @@ class Hero extends Character{
     private int level;
     private int maxLevel;
     private int gold;
-    Hero(String name, int hp, int maxHp, int damage) {
-        super(name, hp, maxHp, damage);
+    Hero(String name, int hp, int maxHp, Weapon weapon) {
+        super(name, hp, maxHp, weapon);
     }
     @Override
     void takeDamage(int damage) {
@@ -16,7 +16,7 @@ class Hero extends Character{
     }
 
     @Override
-    void attack() {
+    void attack(String name, int damage, int health) {
         System.out.println("Hero attacks");
     }
 
@@ -76,6 +76,10 @@ class Hero extends Character{
     }
 
     public void lvlUp() {
+        if (this.level == 1)
+        {
+            levelUpCondition = 100;
+        }
         if (this.level <= this.maxLevel && this.level >= 0) {
             if (this.levelUpCondition == xp) {
                 System.out.println(super.name + " leveled up!");
