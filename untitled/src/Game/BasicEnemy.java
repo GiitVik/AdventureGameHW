@@ -1,4 +1,6 @@
-class BasicEnemy extends Monster{
+package Game;
+
+class BasicEnemy extends Monster {
     BasicEnemy(String name, int hp, int maxHp, Weapon weapon, int xpReward, int goldReward) {
         super(name, hp, maxHp, weapon, xpReward, goldReward);
     }

@@ -1,7 +1,9 @@
+package Game;
+
 abstract class Character {
-    String name;
-    int hp, maxHp;
-    Weapon weapon;
+    protected String name;
+    protected int hp, maxHp;
+    protected Weapon weapon;
 
     Character(String name, int hp, int maxHp, Weapon weapon) {
         this.name = name;

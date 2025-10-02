@@ -1,6 +1,8 @@
-class Boss extends Monster{
-    Boss(String name, int hp, int maxHp, Weapon weapon) {
-        super(name, hp, maxHp, weapon);
+package Game;
+
+class Boss extends Monster {
+    Boss(String name, int hp, int maxHp, Weapon weapon, int xpReward, int goldReward) {
+        super(name, hp, maxHp, weapon,  xpReward, goldReward);
     }
 
     @Override
@@ -17,7 +19,7 @@ class Boss extends Monster{
 
     }
 
-    void specialAttack() {
+    void specialAttack(String name, int damage, int health) {
         //Stun player, skip turn
     }
 }

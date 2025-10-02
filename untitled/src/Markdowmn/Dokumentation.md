@@ -1,5 +1,12 @@
+    Game. 
     Character (Abstract) (name, hp, damage)
-        - Hero  (xp, level, weapon, gold)
-        - Monster (Abstract) (xpReward, goldReward)
+        - Game.Hero  (xp, level, weapon, gold)
+        - Game.Monster (Abstract) (xpReward, goldReward)
             - Goblin
-            - Boss  (specialAttack)
+            - Game.Boss  (specialAttack)
+    Weapon (name, damage)
+
+    Helper (generateNumber)
+
+    Battle system
+        

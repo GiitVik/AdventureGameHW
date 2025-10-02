@@ -1,3 +1,5 @@
+package Game;
+
 class Hero extends Character{
     private int xp;
     private int level;
@@ -17,7 +19,7 @@ class Hero extends Character{
 
     @Override
     void attack(String name, int damage, int health) {
-        System.out.println("Hero attacks");
+        System.out.println("Characters.Hero attacks");
     }
 
     public void gainXp(int xp) {
@@ -28,6 +30,16 @@ class Hero extends Character{
             System.out.println(" to: " + this.xp + ".");
             System.out.println("----------");
         }
+    }
+
+    public void setGold(int gold) {
+        this.gold = gold;
+    }
+
+    public void gainGold(int gold) {
+        System.out.println(super.name + " gains gold: " + gold);
+        this.gold += gold;
+        System.out.println("Gold count is now: " + this.gold + ".");
     }
 
     public int getXp() {
@@ -68,7 +80,7 @@ class Hero extends Character{
 
     public boolean isLevelMax() {
         if (this.level == this.maxLevel) {
-            System.out.println("You won! Hero is at level " + this.level);
+            System.out.println("You won! Characters.Hero is at level " + this.level);
             return true;
         }
 

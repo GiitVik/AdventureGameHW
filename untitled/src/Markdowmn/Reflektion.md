@@ -1,0 +1,4 @@
+## RPG Arbete (Av Viktor Gustafsson)
+I detta projekt har jag arbetat med att skapa ett rollspel inom Java.
+Först har jag börjat med att skapa olika klasser som "Hero", "Basic Enemy", samt abstrakta klasser som "Character" och "Monster".
+I början så var jag lite obekant med koncept som abstrakta klasser, arv, polymorfism med mera, då vi fick lära oss detta tillsammans med start av denna uppgift, men tillsammans med detta projekt så har jag lärt mig mer hur detta fungerar. Med arv och "interfaces" kan man enkelt skapa "kontrakt" mellan olika klasser så att dom fullföljer vissa villkor som är nödvändiga för dessa klasser att fungera. 
