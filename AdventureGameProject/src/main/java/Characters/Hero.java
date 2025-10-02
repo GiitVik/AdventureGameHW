@@ -1,15 +1,15 @@
-package Game;
+package Characters;
 
-class Hero extends Character{
+public class Hero extends Character{
     private int xp;
     private int level;
     private int maxLevel;
     private int gold;
-    Hero(String name, int hp, int maxHp, Weapon weapon) {
+    public Hero(String name, int hp, int maxHp, Weapon weapon) {
         super(name, hp, maxHp, weapon);
     }
     @Override
-    void takeDamage(int damage) {
+    public void takeDamage(int damage) {
         System.out.println(super.name + " took " + damage + " points in damage.");
         System.out.println(super.name + "'s health was: " + super.hp);
         super.hp -= damage;
@@ -18,7 +18,7 @@ class Hero extends Character{
     }
 
     @Override
-    void attack(Character character) {
+    public void attack(Character character) {
         System.out.println("Characters.Hero attacks");
     }
 

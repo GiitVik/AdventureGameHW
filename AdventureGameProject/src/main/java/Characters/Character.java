@@ -1,4 +1,5 @@
-package Game;
+package Characters;
+
 
 abstract class Character {
     protected String name;

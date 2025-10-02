@@ -28,7 +28,8 @@ public class Main {
 
         System.out.println(goblin.hp);
         goblin.takeDamage(hero.weapon.getDamage());
-        goblin.attack(hero.name, goblin.weapon.getDamage(), hero.hp);
+        goblin.attack(hero);
+        goblin.attack(boss);
         hero.gainGold(100);
 
     }
@@ -39,7 +40,6 @@ public class Main {
         System.out.println("Welcome to the game! Pick one of the following choices: ");
         System.out.println("1. Test Battle");
         System.out.println("9. End game");
-        reader.readInt();
         System.out.println("Choice: ");
     }
 
