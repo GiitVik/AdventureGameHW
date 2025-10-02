@@ -9,17 +9,30 @@ public class Hero extends Character{
         super(name, hp, maxHp, weapon);
     }
     @Override
-    public void takeDamage(int damage) {
-        System.out.println(super.name + " took " + damage + " points in damage.");
+    public void takeDamage(Character character) {
+        System.out.println(super.name + " took " + character.weapon.getDamage() + " points in damage.");
         System.out.println(super.name + "'s health was: " + super.hp);
-        super.hp -= damage;
+        super.hp -= character.weapon.getDamage();
         System.out.println(super.name + " now has " + hp + " health points");
         System.out.println("-------------");
     }
 
     @Override
     public void attack(Character character) {
-        System.out.println("Characters.Hero attacks");
+        System.out.println(super.name + " attacks!");
+        System.out.println(character.name + "'s health was: " + character.hp);
+        System.out.println(character.name + " took " + super.weapon.getDamage() + " points in damage.");
+        character.hp -= super.weapon.getDamage();
+        System.out.println(character.name + " now has " + character.hp + " health points");
+        System.out.println("-------------");
+    }
+
+    @Override
+    public boolean isAlive() {
+        if (super.hp <= 0) {
+            return false;
+        }
+        return true;
     }
 
     public void gainXp(int xp) {
@@ -80,7 +93,8 @@ public class Hero extends Character{
 
     public boolean isLevelMax() {
         if (this.level == this.maxLevel) {
-            System.out.println("You won! Characters.Hero is at level " + this.level);
+            System.out.println("You won! " + super.name + " is at level " + this.level);
+            System.out.println("---------");
             return true;
         }
 

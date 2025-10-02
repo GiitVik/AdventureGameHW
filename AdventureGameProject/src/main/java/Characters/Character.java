@@ -1,11 +1,12 @@
 package Characters;
 
-
+// Abstract character class, parent to Enemy, Hero, Boss, Monster
 abstract class Character {
     protected String name;
     protected int hp, maxHp;
     protected Weapon weapon;
 
+    //Character constructor
     Character(String name, int hp, int maxHp, Weapon weapon) {
         this.name = name;
         this.hp = hp;
@@ -13,6 +14,7 @@ abstract class Character {
         this.weapon = weapon;
     }
 
-    abstract void takeDamage(int damage);
+    abstract void takeDamage(Character character);
     abstract void attack(Character character);
+    abstract boolean isAlive();
 }

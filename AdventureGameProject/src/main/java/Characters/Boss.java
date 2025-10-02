@@ -6,20 +6,28 @@ public class Boss extends Monster {
     }
 
     @Override
-    void takeDamage(int damage) {
-        System.out.println(super.name + " took " + damage + " points in damage.");
+    public void takeDamage(Character character) {
+        System.out.println(super.name + " took " + character.weapon.getDamage() + " points in damage.");
         System.out.println(super.name + "'s health was: " + super.hp);
-        super.hp -= damage;
+        super.hp -= character.weapon.getDamage();
         System.out.println(super.name + " now has " + hp + " health points");
         System.out.println("-------------");
     }
 
     @Override
-    void attack(Character character) {
+    public void attack(Character character) {
 
     }
 
-    void specialAttack(String name, int damage, int health) {
+    @Override
+    public boolean isAlive() {
+        if (super.hp <= 0) {
+            return false;
+        }
+        return true;
+    }
+
+    public void specialAttack(String name, int damage, int health) {
         //Stun player, skip turn
     }
 }
