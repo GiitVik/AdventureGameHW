@@ -1,4 +1,4 @@
-package Characters;
+package org.example.Players;
 
 public class Weapon {
     private String name;

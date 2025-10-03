@@ -1,4 +1,4 @@
-package Characters;
+package org.example.Players;
 
 // Abstract character class, parent to Enemy, Hero, Boss, Monster
 abstract class Character {

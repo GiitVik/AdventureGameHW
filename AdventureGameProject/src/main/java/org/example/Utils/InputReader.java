@@ -1,4 +1,4 @@
-package Utils;
+package org.example.Utils;
 import java.util.Scanner;
 
 public class InputReader {

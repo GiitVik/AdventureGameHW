@@ -1,6 +1,6 @@
-package Characters;
+package org.example.Players;
 
-public class Hero extends Character{
+public class Hero extends Character {
     private int xp;
     private int level;
     private int maxLevel;
@@ -17,7 +17,6 @@ public class Hero extends Character{
         System.out.println("-------------");
     }
 
-    @Override
     public void attack(Character character) {
         System.out.println(super.name + " attacks!");
         System.out.println(character.name + "'s health was: " + character.hp);
