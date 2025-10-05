@@ -14,7 +14,7 @@ abstract class Character {
         this.weapon = weapon;
     }
 
-    abstract void takeDamage(Character character);
+    abstract void takeDamage(int damage);
     abstract void attack(Character character);
     abstract boolean isAlive();
 }

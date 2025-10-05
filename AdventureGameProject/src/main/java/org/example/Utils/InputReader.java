@@ -20,7 +20,7 @@ public class InputReader {
         }
 
         int value = scanner.nextInt();
-        scanner.nextLine();
+        //scanner.nextLine();
         return value;
     }
 

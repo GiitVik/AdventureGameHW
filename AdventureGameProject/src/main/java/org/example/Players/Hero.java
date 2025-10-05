@@ -9,23 +9,37 @@ public class Hero extends Character {
         super(name, hp, maxHp, weapon);
     }
     @Override
-    public void takeDamage(Character character) {
-        System.out.println(super.name + " took " + character.weapon.getDamage() + " points in damage.");
+    public void takeDamage(int damage) {
+        System.out.println(super.name + " takes damage!");
         System.out.println(super.name + "'s health was: " + super.hp);
-        super.hp -= character.weapon.getDamage();
+        super.hp -= damage;
         System.out.println(super.name + " now has " + hp + " health points");
         System.out.println("-------------");
     }
-
+    //Displays character status
+    public void playerStats(Hero hero) {
+        System.out.println("-------------");
+        System.out.println("Character name: " + hero.getName());
+        System.out.println("Character level: " + hero.level);
+        System.out.println("Character hp: " + hero.hp);
+        System.out.println("Character damage: " + hero.weapon.getDamage());
+        System.out.println("Character xp: " + hero.getXp());
+        System.out.println("Character gold: " + hero.getGold());
+        System.out.println("-------------");
+    }
+    // Method for hero to attack target (character)
     public void attack(Character character) {
         System.out.println(super.name + " attacks!");
         System.out.println(character.name + "'s health was: " + character.hp);
         System.out.println(character.name + " took " + super.weapon.getDamage() + " points in damage.");
         character.hp -= super.weapon.getDamage();
+        if (character.hp <= 0) {
+            character.hp = 0;
+        }
         System.out.println(character.name + " now has " + character.hp + " health points");
         System.out.println("-------------");
     }
-
+    // Method to check if hero is alive
     @Override
     public boolean isAlive() {
         if (super.hp <= 0) {
@@ -34,13 +48,20 @@ public class Hero extends Character {
         return true;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getGold() {
+        return gold;
+    }
+
     public void gainXp(int xp) {
         if (this.level < this.maxLevel) {
-            System.out.println("Gained experience: " + xp);
-            System.out.println("Xp increased from: " + this.xp + ".");
+            System.out.println("Gained experience: " + xp + " xp.");
+            System.out.println("Xp increased from: " + this.xp + " xp.");
             this.xp += xp;
-            System.out.println(" to: " + this.xp + ".");
-            System.out.println("----------");
+            System.out.println(" to: " + this.xp + " xp.");
         }
     }
 
@@ -49,9 +70,10 @@ public class Hero extends Character {
     }
 
     public void gainGold(int gold) {
-        System.out.println(super.name + " gains gold: " + gold);
+        System.out.println("Gained gold: " + gold + "g");
+        System.out.println("Gold increased from: " + this.gold + " g.");
         this.gold += gold;
-        System.out.println("Gold count is now: " + this.gold + ".");
+        System.out.println(" to: " + this.gold + " g.");
     }
 
     public int getXp() {

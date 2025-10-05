@@ -9,11 +9,19 @@ public class Enemy extends Monster {
         return name;
     }
 
+    public int getXpReward() {
+        return xpReward;
+    }
+
+    public int getGoldReward() {
+        return goldReward;
+    }
+
     @Override
-    public void takeDamage(Character character) {
-        System.out.println(super.name + " took " + character.weapon.getDamage() + " points in damage.");
+    public void takeDamage(int damage) {
+        System.out.println(super.name + " takes damage!");
         System.out.println(super.name + "'s health was: " + super.hp);
-        super.hp -= character.weapon.getDamage();
+        super.hp -= damage;
         System.out.println(super.name + " now has " + hp + " health points");
         System.out.println("-------------");
     }
@@ -24,6 +32,9 @@ public class Enemy extends Monster {
         System.out.println(character.name + "'s health was: " + character.hp);
         System.out.println(character.name + " took " + super.weapon.getDamage() + " points in damage.");
         character.hp -= super.weapon.getDamage();
+        if (character.hp <= 0) {
+            character.hp = 0;
+        }
         System.out.println(character.name + " now has " + character.hp + " health points");
         System.out.println("-------------");
     }
@@ -31,6 +42,7 @@ public class Enemy extends Monster {
     @Override
     public boolean isAlive() {
         if (super.hp <= 0) {
+            super.hp = 0;
             return false;
         }
         return true;
