@@ -16,7 +16,6 @@ public class Game {
     private boolean triggerGameOver;
     private int number;
     private int randomNumber;
-    ItemList items = new ItemList();
     // Method that handles choices for the player in the world
     public void states(Hero hero) {
         triggerGameOver = false;
@@ -213,7 +212,7 @@ public class Game {
         // and finally picks random number between 90 and 100
         else if (randomNum > 90 && randomNum <= 100) {
             isBattling = true;
-            battleMenuBossBattle(hero, new Boss("Balrog", 100, 100,new Weapon("Mace", 25, 0), 1000, 100));
+            battleMenuBossBattle(hero, new Boss("Balrog", 80, 100,new Weapon("Mace", 25, 0), 1000, 100));
         }
     }
 }

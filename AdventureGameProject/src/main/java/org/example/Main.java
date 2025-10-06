@@ -35,7 +35,7 @@ public class Main {
     public static void startGame() {
         System.out.println("-------------");
         System.out.println("Welcome to the game!");
-        Hero hero = new Hero("Jakob", 75, 100,new Weapon("Sword", 40, 0));
+        Hero hero = new Hero("Hero", 75, 100,new Weapon("Sword", 20, 0));
         hero.setLevel(1); // Characters.Hero is instantiated
         hero.setGold(25);
         hero.setMaxLevel(10);

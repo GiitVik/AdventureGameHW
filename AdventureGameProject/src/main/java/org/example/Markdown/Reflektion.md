@@ -1,11 +1,19 @@
 ## RPG Arbete (Av Viktor Gustafsson)
 I detta projekt har jag arbetat med att skapa ett rollspel inom Java.
 Först har jag börjat med att skapa olika klasser som "Hero", "Basic Enemy", samt abstrakta klasser som "Character" och "Monster".
-I början så var jag lite obekant med koncept som abstrakta klasser, arv, p
-olymorfism med mera, då vi fick lära oss detta tillsammans med start av denna uppgift, men tillsammans med detta projekt så har jag lärt mig mer hur detta fungerar. Med arv och "interfaces" kan man enkelt skapa "kontrakt" 
-mellan olika klasser så att dom fullföljer vissa villkor som är nödvändiga för dessa klasser att fungera.
-Under projektets gång hade jag främst problem med att sätta in parametrar för fiender, då jag från början trodde att det skulle gå att använda sig av en "Character" parameter,
- som jag har använt inom klasser tillhörande paket som "Players". Som en lösning till detta fick jag helt enkelt använda olika metoder som i princip gör liknande saker för "Boss" eller "Enemy", som
-använder olika parametrar för att hämta dessa objekt för fiender. För att sammanfatta mitt perspektiv av hela projektet,
- så tycker jag att jag har lärt mig väldigt mycket, inte minst hur man hämtar samt skickar data mellan olika klasser, 
+I början så var jag lite obekant med koncept som abstrakta klasser, arv, polymorfism med mera, då vi fick lära oss detta tillsammans med starten av denna uppgift, men tillsammans med detta projekt så har jag lärt mig mer hur detta fungerar  med mer tydlighet.
+Med "interfaces" som exempel kan man enkelt skapa "kontrakt" mellan olika klasser så att de fullföljer vissa villkor som är nödvändiga för dessa klasser att fungera.
+Jag försökte implementera Shop samt Purchaseable klasserna i koden, vilket egentligen gör det möjligt för spelaren att spendera guld på föremål samt sätta in detta föremål hos spelarens lista av föremål, men det går ej att använda föremålet. Jag hade velat implementera ett fungerande föremåls-system, men prioriterade att endast ha möjligheten att köpa föremål, dra av guld som man har spenderat, samt lagra föremål hos spelaren. För att lösa detta hade jag även även lagt till en metod för föremål(Item klassen) som gör det möjligt att använda detta objekt.
+Jag lärde mig väldigt mycket att arbeta med abstrakta klasser, då man kommer ha mer behov av detta koncept i större projekt, inte minst att abstraktion hjälper programmeraren att förstå helheten att skapa ett särskilt objekt. Det hjälper en även att dölja viktig information som utomstående klasser inte ska ha åtkomst till med inkapsling, utom om man exempelvis kallar på detta med en “get” metod.
+Detta hjälper projektutvecklingen en hel del, då detta bidrar till programmeraren att inte glömma viktiga detaljer.
+Det hjälper även att förstå hur koncept som polymorfism fungerar annorlunda mellan klasser, till exempel hur klassen “Boss” kan aktivera en specialattack med sin “Attack()” metod.
+Under projektets gång hade jag främst problem med att sätta in parametrar för fiender, då jag från början trodde att det skulle gå att använda sig av en "Character" parameter,som jag har använt inom klasser tillhörande paket som "Players". Som en lösning till detta fick jag helt enkelt använda olika metoder som i princip gör liknande saker för "Boss" eller "Enemy", som
+använder olika parametrar för att hämta dessa objekt för fiender.
+Jag tyckte även det var lite utmanande att få spelaren att uppnå “max level”, då spelet ska förstå varje gång spelaren får en särskild mängd erfarenhetspoäng, samt om spelaren har för mycket erfarenhetspoäng för att uppnå det första villkoret att levla upp. Som en lösning till detta skapade jag en variabel som heter “levelUpCondition” som avgör om spelaren först har uppnått 100 erfarenhetspoäng, och sedan adderar sig själv inom en “while” loop som avgör om “levelUpCondition” är mindre än eller lika med “xp”(erfarenhetspoäng”, och spelarens level är mindre än maxlevel.
+På så vis fortsätter spelaren i loopen tills “levelUpCondition” är i samma nivå som spelarens erfarenhetspoäng, samt tills spelaren har uppnått max level.
+I koden har jag även olika “boolean” variabler som definierar om spelaren har avslutat spelet med vinst eller förlust osv.
+Dessa går sedan vidare till en metod som specifikt hanterar “Game over”. Fördelen med detta är att man har olika villkor för att avsluta spelet, men samtidigt finns det säkert en enklare lösning, att exempelvis endast ha en metod som hanterar detta helt på egen hand. Jag upplevde mest att det var enklare att göra såhär för min egen skull.
+För att sammanfatta mitt perspektiv av hela projektet,
+så tycker jag att jag har lärt mig väldigt mycket, inte minst hur man hämtar samt skickar data mellan olika klasser,
 samt hur man arbetar med abstrakta metoder och "interfaces", vilket tidigare har varit ett främmande koncept för mig, även om jag har arbetat med lite kodning tidigare.
+
