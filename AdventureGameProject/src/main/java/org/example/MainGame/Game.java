@@ -54,7 +54,7 @@ public class Game {
                             hero.allItemsOnList();
                             break;
                         case 6:
-                            battleMenuBossBattle(hero, new Boss("Balrog", 100, 100,new Weapon("Mace", 25, 0), 1000, 100));
+                            battleMenuBossBattle(hero, new Boss("Balrog", 80, 100,new Weapon("Mace", 15, 0), 1000, 100));
                             break;
                         case 7:
                             triggerGameOver = true;
@@ -212,7 +212,7 @@ public class Game {
         // and finally picks random number between 90 and 100
         else if (randomNum > 90 && randomNum <= 100) {
             isBattling = true;
-            battleMenuBossBattle(hero, new Boss("Balrog", 80, 100,new Weapon("Mace", 25, 0), 1000, 100));
+            battleMenuBossBattle(hero, new Boss("Balrog", 80, 100,new Weapon("Mace", 15, 0), 1000, 100));
         }
     }
 }
