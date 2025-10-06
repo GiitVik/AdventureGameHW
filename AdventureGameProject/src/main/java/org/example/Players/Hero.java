@@ -1,10 +1,20 @@
 package org.example.Players;
 
+import org.example.MainGame.Item;
+import org.example.MainGame.ItemList;
+
+import java.util.ArrayList;
+import java.util.List;
+
+//Hero class, this is where the player stores data like name, hp, weapon damage,
+//but also can check when the hero levels up, when the enemy dies, gain experience points from battles.
 public class Hero extends Character {
+    private List<Item> itemList = new ArrayList<>();
     private int xp;
     private int level;
     private int maxLevel;
     private int gold;
+    //Hero constructor
     public Hero(String name, int hp, int maxHp, Weapon weapon) {
         super(name, hp, maxHp, weapon);
     }
@@ -29,6 +39,7 @@ public class Hero extends Character {
     }
     // Method for hero to attack target (character)
     public void attack(Character character) {
+        System.out.println("-------------");
         System.out.println(super.name + " attacks!");
         System.out.println(character.name + "'s health was: " + character.hp);
         System.out.println(character.name + " took " + super.weapon.getDamage() + " points in damage.");
@@ -52,17 +63,18 @@ public class Hero extends Character {
         return name;
     }
 
-    public int getGold() {
-        return gold;
-    }
-
     public void gainXp(int xp) {
         if (this.level < this.maxLevel) {
             System.out.println("Gained experience: " + xp + " xp.");
             System.out.println("Xp increased from: " + this.xp + " xp.");
             this.xp += xp;
             System.out.println(" to: " + this.xp + " xp.");
+            lvlUp();
         }
+    }
+
+    public int getGold() {
+        return gold;
     }
 
     public void setGold(int gold) {
@@ -73,6 +85,13 @@ public class Hero extends Character {
         System.out.println("Gained gold: " + gold + "g");
         System.out.println("Gold increased from: " + this.gold + " g.");
         this.gold += gold;
+        System.out.println(" to: " + this.gold + " g.");
+    }
+
+    public void loseGold(int gold) {
+        System.out.println("Lost gold: " + gold + "g");
+        System.out.println("Gold decreased from: " + this.gold + " g.");
+        this.gold -= gold;
         System.out.println(" to: " + this.gold + " g.");
     }
 
@@ -128,7 +147,8 @@ public class Hero extends Character {
             levelUpCondition = 100;
         }
         if (this.level <= this.maxLevel && this.level >= 0) {
-            if (this.levelUpCondition == xp) {
+            while (this.levelUpCondition <= xp && this.level < this.maxLevel)
+            {
                 System.out.println(super.name + " leveled up!");
                 System.out.println("Levelup condition was: " + this.levelUpCondition);
                 this.levelUpCondition += 100;
@@ -146,5 +166,23 @@ public class Hero extends Character {
                 System.out.println("----------");
             }
         }
+    }
+    public void addItemToList(Item item) {
+        itemList.add(item);
+    }
+    public void allItemsOnList() {
+        System.out.println("----------");
+        System.out.println("All items: ");
+        System.out.println("----------");
+        if (itemList.size() > 0) {
+            for (Item item : itemList) {
+                System.out.println("Item: " + item.getName());
+            }
+        }
+        else if (itemList.size() == 0)
+        {
+            System.out.println("No items in your inventory");
+        }
+        System.out.println("----------");
     }
 }

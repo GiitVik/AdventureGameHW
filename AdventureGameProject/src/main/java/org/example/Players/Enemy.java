@@ -1,5 +1,6 @@
 package org.example.Players;
 
+// This is the enemy class, it has similar features to boss from the abstract class "Monster".
 public class Enemy extends Monster {
     public Enemy(String name, int hp, int maxHp, Weapon weapon, int xpReward, int goldReward) {
         super(name, hp, maxHp, weapon, xpReward, goldReward);

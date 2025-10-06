@@ -8,6 +8,7 @@ public class Helper {
     private int max;
     private int randomRange;
 
+    //Generates a random number between 1 and 100.
     public int generateRandomNumber(){
         min = 1;
         max = 100;
